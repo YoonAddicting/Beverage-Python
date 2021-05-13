@@ -134,3 +134,4 @@ dmypy.json
 # Individual files
 conf.ini
 database.sqlite
+*.sqlite-journal

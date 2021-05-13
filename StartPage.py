@@ -7,7 +7,7 @@ import AdminPage
 import BeveragePython
 
 class StartPage(tk.Frame):
-    def __init__(self, master: tk.Tk):
+    def __init__(self, master: tk.Tk, ID):
         # Initialize window
         tk.Frame.__init__(self, master)
         title_label = tk.Label(self, text="Welcome to Beverage-Python!", font=(None, 20))
@@ -44,6 +44,11 @@ class StartPage(tk.Frame):
             showinfo('Code', self.barcode)
             # TODO Create check that verifies if the given barcode belongs to a given user
 
-            # self.code = "Code entered: " + self.code
-            # self.label['text'] = self.code
             self.barcode = ''
+
+class BuyPage(tk.Frame):
+    def __init__(self, master: tk.Tk, ID):
+        # Initialize window
+        tk.Frame.__init__(self, master)
+        tk.Label(self, text="Please scan your items!", font=(None, 20)).pack()
+        self.barcode = ''

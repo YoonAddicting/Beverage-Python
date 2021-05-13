@@ -1,7 +1,5 @@
 import tkinter as tk
 from pathlib import Path
-import sqlite3
-from sqlite3 import Error
 
 from StartPage import StartPage
 import configuration
@@ -25,11 +23,10 @@ class BeveragePython(tk.Tk):
         if self.config.getboolean('DEFAULT', 'Fullscreen') == True:
             self.attributes("-fullscreen", True)
         self.database = Database.Database()
-        self.database_conn = self.database.get_database_conn()
 
-    def switch_frame(self, frame_class):
+    def switch_frame(self, frame_class, ID=None):
         """ Destroys current frame and replaces it with a new one."""
-        new_frame = frame_class(self)
+        new_frame = frame_class(self,ID)
         if self._frame is not None:
             self._frame.destroy()
         self._frame = new_frame
